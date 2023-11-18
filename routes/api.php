@@ -15,8 +15,8 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::post('/login', [AuthController::class, 'login']);
+// 登录路由 - 应用 'throttle:store' 限流器限制尝试次数以防止暴力破解。
+Route::post('/sessions', [AuthController::class, 'store'])->middleware('throttle:store');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// 登出路由 - 仅限已认证用户
+Route::middleware('auth:sanctum')->delete('/sessions', [AuthController::class, 'destroy']);
