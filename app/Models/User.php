@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'users';
+
     // 指定自定义主键，不使用 Laravel 的默认主键名 'id'
     protected $primaryKey = 'user_id';
 

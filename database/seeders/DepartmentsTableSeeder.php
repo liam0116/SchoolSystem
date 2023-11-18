@@ -13,12 +13,11 @@ class DepartmentsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('roles')->insert([
-            ['role_name' => 'Admin'],
-            ['role_name' => 'Student'],
-            ['role_name' => 'Teacher'],
-            ['role_name' => 'Staff'],
-            // 其他角色...
+        DB::table('departments')->insert([
+            ['name' => '資訊工程部門', 'college_id' => 1],
+            ['name' => '資訊管理系', 'college_id' => 2],
+            ['name' => '資訊工程系', 'college_id' => 3],
+            // 其他部门...
         ]);
     }
 }
