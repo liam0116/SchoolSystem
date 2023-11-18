@@ -39,8 +39,7 @@ class User extends Authenticatable
      * 这里的字段不会被包含在模型的数组或 JSON 表示中，这对于敏感信息（如密码）特别有用。
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password'
     ];
 
-    // 其他模型方法和属性...
 }
