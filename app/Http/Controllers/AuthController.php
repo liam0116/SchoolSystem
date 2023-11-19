@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\UserServicesInterface;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+//use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
-
+// Requests
+use App\Http\Requests\StoreUserRequest;
+// Contracts
+use App\Contracts\StoreUserServicesInterface;
 class AuthController extends Controller
 {
     protected $userService;
@@ -16,7 +18,7 @@ class AuthController extends Controller
      *
      * @param UserServiceInterface $userService 用户服务
      */
-    public function __construct(UserServicesInterface $userService)
+    public function __construct(StoreUserServicesInterface $userService)
     {
         $this->userService = $userService;
     }
@@ -27,23 +29,8 @@ class AuthController extends Controller
      * @param Request $request HTTP 請求
      * @return \Illuminate\Http\JsonResponse JSON 數據
      */
-    public function store(Request $request): \Illuminate\Http\JsonResponse
+    public function store(StoreUserRequest $request): \Illuminate\Http\JsonResponse
     {
-        // 验证請求參數
-        $validator = Validator::make($request->all(), [
-            'user_name' => 'required|string',
-            'password' => 'required|string',
-        ]);
-
-        // 验证失败, 返回 422 状态码和第一个错误信息
-        if ($validator->fails()) {
-            $firstErrorMessage = $validator->errors()->first();
-            return response()->json([
-                'success' => false,
-                'msg' => $firstErrorMessage
-            ], 422);
-        }
-
         $username = $request->input('user_name');
         $password = $request->input('password');
 

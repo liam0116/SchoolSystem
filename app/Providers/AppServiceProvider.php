@@ -7,9 +7,9 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Http\Request;
 //Contracts
-use App\Contracts\UserServicesInterface;
+use App\Contracts\StoreUserServicesInterface;
 //Services
-use App\Services\UserServices;
+use App\Services\StoreUserServices;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // 在服务提供者中绑定 UserServicesInterface 接口到 UserServices 类的实现
-        $this->app->bind(UserServicesInterface::class, UserServices::class);
+        $this->app->bind(StoreUserServicesInterface::class, StoreUserServices::class);
     }
 
     /**
