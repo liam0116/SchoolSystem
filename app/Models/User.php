@@ -30,7 +30,7 @@ class User extends Authenticatable
      * 这些字段对应于数据库迁移中您定义的列。
      */
     protected $fillable = [
-        'user_name', 'password', 'role_id', 'department_id', 'name', 'email', 
+        'user_name', 'password', 'role_enum', 'department_id', 'name', 'email', 
         'phone_number', 'date_of_birth', 'joining_year', 'identity', 
         'id_card', 'passport', 'country', 'city', 'address'
     ];

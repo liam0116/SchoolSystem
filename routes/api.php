@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +17,8 @@ use App\Http\Controllers\AuthController;
 
 // 登录路由 - 应用 'throttle:store' 限流器限制尝试次数以防止暴力破解。
 Route::post('/sessions', [AuthController::class, 'store'])->middleware('throttle:store');
-
 // 登出路由 - 仅限已认证用户
 Route::middleware('auth:sanctum')->delete('/sessions', [AuthController::class, 'destroy']);
+
+// 创建用户
+Route::middleware('auth:sanctum')->post('/users', [UserController::class, 'store']);

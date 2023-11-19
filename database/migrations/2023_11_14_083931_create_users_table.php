@@ -15,8 +15,7 @@ return new class extends Migration
             $table->increments('user_id');
             $table->string('user_name', 255)->unique();
             $table->string('password', 255); // 注意: 在实际应用中应使用 Laravel 的 Hash Facade 进行加密
-            $table->integer('role_id')->unsigned();
-            $table->foreign('role_id')->references('role_id')->on('roles');
+            $table->string('role_enum', 255);
             $table->integer('department_id')->unsigned();
             $table->foreign('department_id')->references('department_id')->on('departments');
             $table->string('name', 255);
