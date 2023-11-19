@@ -7,7 +7,7 @@ namespace App\Contracts;
  * 此接口定义了与用户相关的核心业务逻辑，包括用户的查找、密码验证和令牌创建。
  * 它被用于抽象用户相关操作的实现细节，从而使控制器更专注于处理HTTP请求和响应。
  */
-interface UserServicesInterface
+interface StoreUserServicesInterface
 {
     /**
      * 根据用户名查找用户。

@@ -17,7 +17,7 @@ class UserFactory extends Factory
     {
         return [
             'user_name' => $this->faker->unique()->userName,
-            'password' => Hash::make('password'), // 使用默认密码
+            'password' => Hash::make('Password123@@@'), // 使用默认密码
             'role_id' => $this->faker->randomElement([2, 3, 4]), // 假设角色ID为2、3或者4
             'department_id' => $this->faker->randomElement([2, 3]), // 假设部门ID为1或者2
             'name' => $this->faker->name,

@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         // 创建一个管理员账户
         User::create([
             'user_name' => 'admin',
-            'password' => Hash::make('adminpassword'), // 使用 Hash::make 来加密密码
+            'password' => Hash::make('AdminPassword123@@@'), // 使用 Hash::make 来加密密码
             'role_id' => 1, // 管理员角色的 ID
             'department_id' => 1, // 部门 ID，这里假设为 1
             'name' => 'Admin User',
@@ -36,6 +36,6 @@ class UserSeeder extends Seeder
         ]);
 
         // 创建 1 个用户记录
-        User::factory()->count(3)->create();
+        User::factory()->count(1)->create();
     }
 }

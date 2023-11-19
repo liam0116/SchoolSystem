@@ -17,7 +17,26 @@ php ^8.1
   - https://support.microsoft.com/zh-hk/office/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5 
 ```
 ## 系統指令
+- git clone 專案過後,安裝相關套件
+```
+composer install
+```
+- env 設定
+```
+1. 安裝 Composer 後，在專案根資料夾中建立 .env 文件，並將 .env.example 文件中的所有內容複製到 .env 檔案中。然後在終端機中執行(切記: 記得 cd 至專案底下)
 
+3. php artisan key:generator 或 php artisan key:gen 指令。
+它會在 .env 檔案中為您產生 APP_KEY。
+
+4. 并且設定資料庫:
+DB_DATABASE=(本地資料庫名稱)
+DB_USERNAME=(xxx)
+DB_PASSWORD=(xxx)
+```
+- 運行遷移，生成設定好的資料表
+```
+php artisan migrate
+```
 - 生成模擬數據
   - 運行seeder
 ```bash
@@ -145,7 +164,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // 在服务提供者中绑定 UserServicesInterface 接口到 UserServices 类的实现
-        $this->app->bind(UserServicesInterface::class, UserServices::class);
+        $this->app->bind(StoreUserServicesInterface::class,StoreUserServices::class);
     }
 
     /**

@@ -14,7 +14,7 @@ class LoginTest extends TestCase
         // 檢查登入請求
         $response = $this->postJson('/api/sessions', [
             'user_name' => 'admin',
-            'password' => 'adminpassword'
+            'password' => 'AdminPassword123@@@'
         ]);
 
         // 檢查登入響應
@@ -41,7 +41,7 @@ class LoginTest extends TestCase
         // 模擬错误登入請求
         $response = $this->postJson('/api/sessions', [
             'user_name' => 'admin',
-            'password' => 'wrongpassword'
+            'password' => 'WrongPassword123@@@'
         ]);
 
         // 檢查響應

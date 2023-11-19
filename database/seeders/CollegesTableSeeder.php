@@ -14,7 +14,7 @@ class CollegesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('colleges')->insert([
-            ['name' => '工程部分'],
+            ['name' => '工程部門'],
             ['name' => '商學院'],
             ['name' => '工程學院'],
             // 其他学院...
