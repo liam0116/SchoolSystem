@@ -36,10 +36,10 @@ composer install
 ```
 1. 安裝 Composer 後，在專案根資料夾中建立 .env 文件，並將 .env.example 文件中的所有內容複製到 .env 檔案中。然後在終端機中執行(切記: 記得 cd 至專案底下)
 
-2. php artisan key:generator 或 php artisan key:gen 指令。
+3. php artisan key:generator 或 php artisan key:gen 指令。
 它會在 .env 檔案中為您產生 APP_KEY。
 
-1. 并且設定資料庫:
+4. 并且設定資料庫:
 DB_DATABASE=(本地資料庫名稱)
 DB_USERNAME=(xxx)
 DB_PASSWORD=(xxx)
