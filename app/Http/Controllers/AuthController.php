@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 // Requests
 use App\Http\Requests\StoreUserRequest;
@@ -16,7 +15,7 @@ class AuthController extends Controller
     /**
      * 创建 AuthController 实例。
      *
-     * @param UserServiceInterface $userService 用户服务
+     * @param StoreUserServiceInterface $userService 用户服务
      */
     public function __construct(StoreUserServicesInterface $userService)
     {

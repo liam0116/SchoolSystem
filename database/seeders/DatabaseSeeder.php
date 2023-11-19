@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             // 顺序不能错
             CollegesTableSeeder::class, // 學院模擬數據
             DepartmentsTableSeeder::class, // 系級模擬數據
-            RolesTableSeeder::class,// 身份模擬數據
             UserSeeder::class, // 用戶模擬數據
             // 其他 Seeder...
         ]);

@@ -33,4 +33,12 @@ interface StoreUserServicesInterface
      * @return string 令牌字符串
      */
     public function createTokenForUser($user);
+
+    /**
+     * 创建新的讲师或学生用户。
+     *
+     * @param array $data 用户数据
+     * @return \App\Models\User 创建的用户实例
+     */
+    public function createUser(array $data);
 }
