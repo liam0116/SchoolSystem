@@ -17,6 +17,17 @@ php ^8.1
   - https://support.microsoft.com/zh-hk/office/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5 
 ```
 ## 系統指令
+- 常用指令
+```bash
+php artisan serve // 啓動服務
+php artisan make:controller 《文件名》 // 控制器
+php artisan make:model 《文件名》 //模型
+php artisan make:request 《文件名》 // 表单请求驗證
+数据库相关:
+php artisan make:migration 《文件名》 //建立新的資料庫遷移文件
+php artisan make:seeder 《文件名》 //建立新的資料庫填充類
+php artisan make:factory 《文件名》 //创建新的模型工厂
+```
 - git clone 專案過後,安裝相關套件
 ```
 composer install
@@ -25,10 +36,10 @@ composer install
 ```
 1. 安裝 Composer 後，在專案根資料夾中建立 .env 文件，並將 .env.example 文件中的所有內容複製到 .env 檔案中。然後在終端機中執行(切記: 記得 cd 至專案底下)
 
-3. php artisan key:generator 或 php artisan key:gen 指令。
+2. php artisan key:generator 或 php artisan key:gen 指令。
 它會在 .env 檔案中為您產生 APP_KEY。
 
-4. 并且設定資料庫:
+1. 并且設定資料庫:
 DB_DATABASE=(本地資料庫名稱)
 DB_USERNAME=(xxx)
 DB_PASSWORD=(xxx)
